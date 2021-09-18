@@ -9,8 +9,34 @@
     <title>Maquina de Doces</title>
 </head>
 <body>
-    <canvas id="tela" width="320" height="480"></canvas>
+    <header>Vending Machine</header>
+    <br>
+    <section>
+        <div class="entrada">
+            <p>Escolha o doce: 
+                <input type="radio" name="doce" id="doceA" checked>
+                <label for="doceA">Cupcake R$6,00</label>
+                
+                <input type="radio" name="doce" id="doceB">
+                <label for="doceB">Sorvete R$7,00</label>
+                
+                <input type="radio" name="doce" id="doceC">
+                <label for="doceC">Donut R$8,00</label>
+            </p>
+            <p>Digite seu dinheiro: 
+                <input type="number" name="cash" id="cash" min="0">
+            </p>
+            <p>
+                <input type="button" value="Escolher" onclick="escolher()">
+            </p>
+            <p id="res">
+                Seu doce!
+            </p>
+        </div>
+        <div class="saida">
 
+        </div>
+    </section>
 
     <script src="./maquina.js"></script>
 </body>

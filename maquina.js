@@ -1,23 +1,48 @@
-console.log('Maquina de doces');
+function escolher(){
+    let cash = document.getElementById('cash')
+    let res = document.getElementById('res')
+    let doce = document.getElementsByName('doce')
+    let  troco = Number(cash.value)
+    var doceS = ''
 
-const sprites = new Image();
-const canvas = document.querySelector('canvas');
-const contexto = canvas.getContext('2d');
+    if(cash.value.length == 0){
 
-sprites.src = './vending-machine-sprites.png';
+        window.alert('Dinheiro insuficiente')
 
+    } else {
 
+        if(doce[0].checked){
 
+            doceS = 'Cupcake'
+            troco = troco - 6
+            if(troco < 0){
+                window.alert('Dinheiro insuficiente')
+            } else {
+                res.innerHTML = `Seu doce é ${doceS} e seu troco é ${troco}`
+            }
 
-function loop(){
-    contexto.drawImage(
-        sprites,
-        15, 39, // X, Y
-        229, 349, // Recorte na sprite
-        50, 50, // local no canvas
-        129, 249  // tamanho no canvas
-    );
+        } else if (doce[1].checked){
 
-    requestAnimationFrame(loop);
+            doceS = 'Sorvete'
+            troco = troco - 7
+            if(troco < 0){
+                window.alert('Dinheiro insuficiente')
+            } else {
+                res.innerHTML = `Seu doce é ${doceS} e seu troco é ${troco}`
+            }
+
+        } else {
+
+            doceS = 'Donut'
+            troco = troco - 8
+            if(troco < 0){
+                window.alert('Dinheiro insuficiente')
+            } else {
+                res.innerHTML = `Seu doce é ${doceS} e seu troco é ${troco}`
+            }
+
+        }
+
+    }
+
 }
-loop();
