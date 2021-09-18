@@ -1,23 +1,17 @@
 console.log('Maquina de doces');
 
-const sprites = new Image();
-const canvas = document.querySelector('canvas');
-const contexto = canvas.getContext('2d');
+var moeda1 = 1
+var moeda2 = 2
+var moeda3 = 5
 
-sprites.src = './vending-machine-sprites.png';
+compra(moeda1)
 
+const doces = {
+    "DoceA" : 6.0, 
+    "DoceB" : 7.0, 
+    "DoceC" : 8.0
+};
 
-
-
-function loop(){
-    contexto.drawImage(
-        sprites,
-        15, 39, // X, Y
-        229, 349, // Recorte na sprite
-        50, 50, // local no canvas
-        129, 249  // tamanho no canvas
-    );
-
-    requestAnimationFrame(loop);
+function compra() {
+    
 }
-loop();
