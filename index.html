@@ -9,33 +9,25 @@
     <title>Maquina de Doces</title>
 </head>
 <body>
-    <header>Vending Machine</header>
+    <header>Maquina de Doces</header>
     <br>
     <section>
-        <div class="entrada">
-            <p>Escolha o doce: 
-                <input type="radio" name="doce" id="doceA" checked>
-                <label for="doceA">Cupcake R$6,00</label>
-                
-                <input type="radio" name="doce" id="doceB">
-                <label for="doceB">Sorvete R$7,00</label>
-                
-                <input type="radio" name="doce" id="doceC">
-                <label for="doceC">Donut R$8,00</label>
-            </p>
-            <p>Digite seu dinheiro: 
-                <input type="number" name="cash" id="cash" min="0">
-            </p>
-            <p>
-                <input type="button" value="Escolher" onclick="escolher()">
-            </p>
-            <p id="res">
-                Seu doce!
-            </p>
-        </div>
-        <div class="saida">
-
-        </div>
+        <span>R$ 1,00</span>
+        <input type="text" name="1" id="1" placeholder="0" value="0" oninput="contagem()">
+        <span>R$ 2,00</span>
+        <input type="text" name="2" id="2" placeholder="0" value="0" oninput="contagem()">
+        <span>R$ 5,00</span>
+        <input type="text" name="5" id="5" placeholder="0" value="0" oninput="contagem()">
+        <br>
+        <button value="Cupcake" id="Cupcake" onclick="retirarDoce(0)">Cupcake</button>
+        <button value="Sorvete" id="Sorvete" onclick="retirarDoce(1)">Sorvete</button>
+        <button value="Donut" id="Donut" onclick="retirarDoce(2)">Donut</button>
+        <br>
+        <button value="cancel" id="cancel" onclick="cancelar()">Cancelar</button>
+        <br>
+        <h2>Total inserido: R$<span id="pago">0.00</span></h2>
+        <br>
+        <h2 id="mensagem">Coloque o dinheiro</h2>
     </section>
 
     <script src="./maquina.js"></script>
