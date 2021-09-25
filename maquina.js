@@ -2,7 +2,7 @@ var change = 0;
 var moneyInserted = 0;
 var msg = ";";
 
-var candys = ["Doce1", "Doce2", "Doce3"];
+var candys = ["Cupcake", "Sorvete", "Donut"];
 const price1 = 6.00;
 const price2 = 7.00;
 const price3 = 8.00;
@@ -57,13 +57,13 @@ function cancel() {
     getTotal();
 
     if(totalPaid > 0) {
-        msg = "Transaction cancelled. $" +totalPaid.toFixed(2) + " has been returned" 
+        msg = "Transição Cancelada. R$" +totalPaid.toFixed(2) + " foi retornado." 
         clearForm();
         clearTally();
 
         messageElement.innerHTML = msg;
     } else if(totalPaid == 0) {
-        msg = "Insert money first. Select candy";
+        msg = "Insira o dinheiro primeiro e selecione o doce";
 
         messageElement.innerHTML = msg;
     }
@@ -74,9 +74,9 @@ function calculateChange(candy) {
 
     // return (tempChange = (getTotal() - price).toFixed(2));
     if(getTotal() != 0) {
-        if(candy == "Doce1") {
+        if(candy == "Cupcake") {
             return (tempChange = (getTotal() - price1).toFixed(2));
-        } else if(candy ==  "Doce2") {
+        } else if(candy ==  "Sorvete") {
             return (tempChange = (getTotal() - price2).toFixed(2));
         } else {
             return (tempChange = (getTotal() - price3).toFixed(2));

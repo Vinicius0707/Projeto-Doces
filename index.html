@@ -8,26 +8,32 @@
     <title>Maquina de Doces</title>
 </head>
 <body>
-    <h1>Maquina de Doces</h1>
+    <div class="container">
+        <main>Maquina de Doces</main>
 
-    <form class="forms">
-        <span>R$1,00</span><input type="text" name="ones" id="ones" placeholder="0" value="0" oninput="tally()">
+        <form class="forms">
+            <span>R$1,00</span><input type="number" name="ones" id="ones" placeholder="0" value="0" oninput="tally()">
+            <br>
+            <span>R$2,00</span><input type="number" name="two" id="two" placeholder="0" value="0" oninput="tally()">
+            <br>
+            <span>R$5,00</span><input type="number" name="fives" id="fives" placeholder="0" value="0" oninput="tally()">
+            <br>
+        </form>
+
+        <div class="container2">
+            <button value="Doce1" id="doce1" onclick="dispenseCandy(0)"></button>
+            <button value="Doce2" id="doce2" onclick="dispenseCandy(1)"></button>
+            <button value="Doce3" id="doce3" onclick="dispenseCandy(2)"></button>
+        </div>
         <br>
-        <span>R$2,00</span><input type="text" name="two" id="two" placeholder="0" value="0" oninput="tally()">
-        <br>
-        <span>R$5,00</span><input type="text" name="fives" id="fives" placeholder="0" value="0" oninput="tally()">
-        <br>
-    </form>
-
-    <button value="Doce1" id="doce1" onclick="dispenseCandy(0)">Cupcake</button>
-    <button value="Doce2" id="doce2" onclick="dispenseCandy(1)">Sorvete</button>
-    <button value="Doce3" id="doce3" onclick="dispenseCandy(2)">Donut</button>
-    <br>
-    <button value="Cancel" id="cancel" onclick="cancel()">Cancelar</button>
-
-    <h2>Dinherio colocado: $<span id="paid">0.00</span></h2>
-
-    <h2 id="message">Insira o dinheiro e selecione o produto.</h2>
+        <button value="Cancel" id="cancel" onclick="cancel()">Cancelar</button>
+        <div id="din">
+        <h2>Dinherio Inserido R$<span id="paid">0.00</span></h2>
+        </div>
+        <footer>
+            <h2 id="message">Insira o dinheiro e selecione o produto.</h2>
+        </footer>
+    </div>
 
     <script src="maquina.js"></script>
 </body>
